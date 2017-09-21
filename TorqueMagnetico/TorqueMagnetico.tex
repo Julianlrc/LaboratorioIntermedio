@@ -1,0 +1,465 @@
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage[spanish]{babel}
+\selectlanguage{spanish} 
+\usepackage[utf8]{inputenc}
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+\usepackage{float}
+%\usepackage[showframe,%Uncomment any one of the following lines to test 
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
+
+\begin{document}
+
+%\preprint{APS/123-QED}
+
+\title{Torque magnético}% Force line breaks with \\
+
+\author{Maria Laura Pérez}
+\email{ml.perez11@uniandes.edu.co}
+ \altaffiliation[Also at ]{Departamento de Física, Universidad de los Andes}
+\author{Julián Rodríguez Cardona}%
+ \email{jl.rodriguez11@uniandes.edu.co}
+\affiliation{Departamento de Física, Universidad de los Andes}%
+
+%\collaboration{}%\noaffiliation
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+El principal objetivo del conjunto de experimentos realizados es hallar el momento magnético y por ende, el torque magnético; además, se busca comprender la resonancia magnética nuclear y evidenciar el fenómeno de precesión del vector de momento angular causado por el torque magnético. Para lograr lo anterior, se realizaron 5 experimentos, los cuales consideran los métodos de equilibrio estático, oscilación armónica, precesión, resonancia magnética y por último, el de una fuerza en un campo con gradiente. Así pues, los respectivos montajes se adecuaron teniendo una unidad principal (U.P) con dos bobinas y una unidad de control, la cual permitía regular el bombeo de aire hacia la primera unidad y activar el campo magnético provocado por el embobinado, así como su respectivo gradiente. Además, se contaba con una torre de plástico a la que se le acoplaba un resorte en el interior, la cual se instalaba en la U.P para el caso de fuerza en campo con gradiente, y un estroboscopio que permitía determinar frecuencias de rotación en la actividad de precesión. Los resultados que se obtuvieron para el momento magnético ($\mu$) en los experimentos fueron variados, pero consistentes cualitativamente, ya que se calculó un $\mu = 0.417$ Nm/T en equilibrio estático, un $\mu = 0.488$ Nm/T con la oscilación armónica de la bola de resina, otro $\mu = 0.665$ Nm/T utilizando la precesión del $\vec{L}$ debido a un campo magnético y finalmente, un $\mu = 0.393$ Nm/T en la actividad de fuerza en el campo magnético variable.
+\end{abstract}
+
+\maketitle
+
+%\tableofcontents
+
+\section{Introducción}
+
+En primer lugar, se debe considerar que en presencia de un campo magnético uniforme $\vec{B}$ existirá un vector denominado \textit{momento magnético} $\vec{\mu}$, el cual tiene dirección paralela al campo en cuestión. La interacción del momento y el campo magnético nos genera la presencia de un \textit{torque magnético} \cite{torque}, el cual está dado por:
+
+\begin{equation}
+    \vec{\tau} = \vec{\mu} \times \vec{B}.
+    \label{eq:torquemag}
+\end{equation}
+
+En segundo lugar, asociado al campo mencionado existirá también una fuerza, la cual será experimentada por las cargas en movimiento. De esta manera, habrá una energía potencial magnética asociada, la cual está determinada por:
+
+\begin{equation}
+U = \vec{\mu} \cdot \vec{B}.
+\label{eq:enerpot}
+\end{equation}
+
+Así pues, en la práctica realizada se halló el momento magnético y a su vez, el torque magnético a causa de un campo magnético externo, el cual en este caso estaba generado por un par de bobinas paralelas con el mismo eje, las cuales se denominan bobinas de Helmholtz \cite{bobina}. Al recibir corriente, este embobinado producía un campo magnético, el cual podía ser uniforme por si solo o variable si se le activaba el gradiente a través de una unidad de control, con la cual se podía manipular la dirección del campo, la corriente aplicada y el suministro de aire sobre la unidad principal, en la cual estaban ubicadas las bobinas y una bola de resina o una torre plástica, según fuera el caso para cada una de las 5 partes de la práctica.
+
+De esta forma, las bobinas mencionadas se pueden simplificar con un modelo de aros de corriente, para nuestro caso con un radio de 0.109m y una distancia entre aros de 0.138m. Con esto, se pudo calcular los valores del campo magnético y su gradiente normalizados a $1A$ de corriente, donde se obtuvo que:
+
+\begin{equation}
+    B(0) = 1.36 \times 10^{-3} T/A.
+    \label{eq:campo}
+\end{equation}
+\begin{equation}
+     \frac{dB}{dz}(0) = 1.69 \times 10^{-2} T/A m.
+    \label{eq:gradiente}
+\end{equation}
+
+Estos resultados facilitaron el cálculo del momento magnético en la práctica, el cual fue hallado a través de 5 métodos distintos, que se describen a continuación.
+
+\subsection{Equilibrio estático}
+
+Esta actividad consiste en buscar la posición en la que el sistema se encontraba en equilibrio estático. El sistema mencionado consta de una bola de resina con una varilla incrustada donde se colocan pesas, esta a su vez se encuentra en la unidad principal, la cual suministra un colchón de aire y permite libertad de movimiento a la bola; además, se le aplica un campo magnético con las bobinas de la U.P. Así pues, se presentaba un torque magnético sobre el imán y otro mecánico debido a la pesa colocada; por lo tanto, por sumatoria de torques se llega a la relación:
+
+\begin{equation}
+    \mu B = rmg + dMg.
+    \label{eq:torques}
+\end{equation}
+
+Donde $\mu$ es el momento magnético, B es el campo magnético generado por el sistema de bobinas, r es la distancia entre el centro de la bola y la pesa, m es la masa de la pesa, M es la masa de varilla y d es la distancia desde el centro del eje de giro hasta el centro de masa de la varilla (se asume en la mitad de esta).
+
+\subsection{Oscilación armónica}
+
+Esta actividad consiste en desplazar la manija de la bola de resina un ángulo pequeño respecto a la vertical, que era la dirección del $\vec{B}$, por lo cual presentaría un movimiento armónico simple, debido a que por la definición \ref{eq:torquemag}, en el producto cruz está implícito el seno del ángulo entre el $\mu$ y el $B$, y si este ángulo es pequeño se puede aproximar al ángulo mismo, por lo cual se obtiene que:
+
+\begin{equation}
+    \frac{d^2 \theta}{dt} = - \frac{\mu B}{I} \theta.
+    \label{movarmonico}
+\end{equation}
+
+Donde $\theta$ es el ángulo entre $\mu$ y $B$, que son el momento magnético y el campo magnético, respectivamente, e $I$ es el momento de inercia de la esfera maciza, es decir, $I=\frac{2}{5}mR^2$.
+
+De esta ecuación de se puede deducir que es un \textit{movimiento armónico simple} con frecuencia angular de oscilación $\omega = \sqrt{\frac{\mu B}{I}}$. Por lo cual, se puede determinar que el periodo de oscilación al cuadrado, por interés en los cálculos futuros, estará dado por:
+
+\begin{equation}
+    T^2=\frac{4\pi^2I}{\mu B}=\frac{8\pi^2}{5}\frac{mR^2}{\mu B}.
+    \label{eq:armonico}
+\end{equation}
+
+Donde m es la masa de la bola, R es su radio, $\mu$ es el momento magnético y B el campo magnético.
+
+\subsection{Precesión}
+
+Ahora, si la bola se pone a girar con un momento angular $\vec{L}$ alineado con el vector de $\mu$, en presencia de $B$, se observará \textit{precesión}. Por lo cual, se tendrá una frecuencia de precesión (Larmor) \cite{prece} dada por:
+
+\begin{equation}
+    \Omega = \frac{\mu B}{L_s}.
+    \label{eq:larmor}
+\end{equation}
+
+Donde $L_s = I \omega$.
+Si en este caso hablamos de una esfera, su valor de momento de inercia implica que el momento angular sea (junto con la definición que relaciona frecuencia ordinaria con frecuencia angular):
+
+\begin{equation}
+    L_s=\frac{4}{5}\pi mR^2f.
+    \label{eq:momangular}
+\end{equation}
+
+Siendo $m$, $R$ y $f$ la masa, el radio y la frecuencia de rotación de la bola. 
+
+\subsection{Resonancia magnética}
+
+En esta actividad se modeló el fenómeno de Resonancia Magnética Nuclear (RMN) con el sistema macroscópico ya mencionado. Este fenómeno consiste básicamente en la generación de un movimiento de precesión por parte de los núcleos atómicos que poseen momento magnético, al aplicarle un cambio magnético externo.
+Tal movimiento provoca un $\vec{B}$ oscilante, el cual a su vez induce una fuerza electromotriz en una bobina a causa de la Ley de Faraday, por lo cual los núcleos atómicos actúan como un transmisor de señales de radio cuya frecuencia es precisamente la de precesión, mientras que la bobina recibe tales señales. \cite{rmn}
+
+En este caso, se le impuso un momento angular a la bola de resina que modela un núcleo atómico, donde además se le aplicó un $B$ rotatorio de forma manual. Por lo tanto, se logra observar precesión y de tal forma identificar el fenómeno de RMN.
+
+\subsection{Fuerza en un campo con gradiente}
+
+En este caso se tiene una torre de plástico con un resorte y un imán en su interior, la cual se instala en la unidad principal. Desde la unidad de control se activa el campo magnético y también su gradiente, por lo cual el imán tiene un momento magnético y una energía potencial dada por \ref{eq:enerpot}; teniendo en cuenta que $F = - \nabla U$ por ser conservativa \cite{prece}, se llega a que la fuerza magnética está dada por:
+
+\begin{equation}
+    \vec{F} = (\vec{\mu} \cdot \vec{\nabla}) \vec{B}.
+    \label{eq:fuerza}
+\end{equation}
+
+Además, se debe tener en cuenta que el resorte involucrado tiene una constante $k$ y sufre una elongación $z$ debido a la fuerzas involucradas, que a su vez están dadas por el comportamiento del campo magnético. Así pues, una relación de interés que se da en el equilibrio y de utilidad en los cálculos posteriores será:
+
+\begin{equation}
+    kz = \mu \frac{dB}{dz}.
+    \label{eq:equilibrio}
+\end{equation}
+
+\section{Montaje Experimental}
+
+La práctica experimental se realizó con equipos de la marca \textit{TeachSpin} \cite{teach}, entre los que se encuentran una unidad principal con bobinas de Helmholtz, en esta se encuentra una base circular, donde se coloca una bola de resina con un disco magnético en su interior. También, se cuenta con una unidad de control que permite aplicar corriente, manipular la dirección del campo magnético,  activar/desactivar el gradiente de este campo y suministrar aire hacia base de la unidad principal; además, se tenía una torre de plástico, un resorte, un imán, pequeñas pesas, varillas de aluminio delgadas y un estroboscopio. Los equipos mencionados se muestran en la siguiente figura.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{montajeTorque.png}
+    \caption{Montaje principal. \cite{guia}}
+    \label{fig:grafica1}
+\end{figure}
+
+Como se mencionó en la sección anterior, se organizaron 5 montajes experimentales distintos, utilizando diferentes métodos.\\
+Primero se realizó la actividad de \textbf{equilibrio estático} en la cual se ubicó la bola en la unidad principal y se le colocó una pesa sobre una varilla incrustada de la siguiente forma:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{equib.png}
+    \caption{Diagrama de equilibrio estático con las variables presentes. \cite{guia}}
+    \label{fig:grafica2}
+\end{figure}
+
+En esta actividad se tenía el campo magnético en dirección vertical positiva, su gradiente apagado y se variaba la corriente entre 0A y 2A hasta ajustarla en un valor donde la manija de la bola apuntara en un ángulo de $90^{\circ}$ respecto a la vertical. Así pues, se variaba la distancia de la pesa respecto al centro de la bola y en 7 ocasiones, para distintas distancias, se halló el valor de corriente y por ende, de campo magnético al cual el sistema volvía al estado de equilibrio descrito previamente.
+
+Después, se dispuso el montaje para la actividad de \textbf{oscilación armónica}, donde se contaba solo con la bola ubicada en la unidad principal sobre un colchón de aire suministrado por la unidad de control, la cual a su vez aplicaba una corriente que generaba un campo magnético en dirección vertical positiva sobre la UP. De esta forma, se ajustaba manualmente la manija de la bola de manera que tuviera un pequeño desplazamiento angular y se diera un movimiento armónico simple, donde se registraba el tiempo de 20 oscilaciones y por ende, el periodo de oscilación. Este procedimiento se realizó 10 veces para valores de corriente entre 1.2A y 3.6A.\\
+Luego, se realizó el experimento de \textbf{precesión}, en el cual se contaba básicamente con el mismo montaje que en el método anterior, pero en este caso se hacía que la bola girara con un espín alineado con el eje de la manija de la bola, preferiblemente en dirección distintas a la vertical y ajustándolo manualmente sin perturbar el sistema para observar lo esperado. Lo anterior se puede visualizar en la siguiente figura.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{prec.png}
+    \caption{Posición de la bola con momento angular en actividad de precesión. \cite{guia}}
+    \label{fig:grafica3}
+\end{figure}
+
+En este caso, se ponía la bola a rotar (sin campo magnético) y para determinar la frecuencia de rotación se usó el estroboscopio, sincronizando los destellos de este con las rotaciones de la bola, tomando un punto de referencia en la manija. Posteriormente, se aplicaba una corriente y se determinaba el periodo de precesión; luego, se regresaba a una corriente nula y se volvía a poner a rotar la bola hasta que tuviera la misma frecuencia de rotación inicial, para después aplicar una corriente de nuevo. Esto se realizó para valores de corriente entre 1A y 4A en pasos de 0.5A.\\
+Posteriormente, se ejecutó la actividad de \textbf{Resonancia Magnética}, para lo cual se instaló en la UP una base de madera que constaba de un par de imanes acoplados, los cuales provocaban un $B$ perpendicular al ya provocado por las bobinas. De esta manera, se ponía a girar la bola de la misma forma que en la actividad de precesión, pero ahora la dirección del $B$ externo era distinta debido a la superposición del campo de las bobinas y el de los imanes acoplados. Además, se hacia girar la base de madera con los imanes manualmente, de forma que tuviera aproximadamente la frecuencia de precesión, realizándolo en la dirección de este movimiento y luego en dirección opuesta a la que precesaba el sistema. Dicho arreglo experimental se ve así:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{rm.png}
+    \caption{Montaje de actividad de Resonancia Magnética. \cite{guia}}
+    \label{fig:grafica4}
+\end{figure}
+
+Finalmente, se desarrolló la actividad de \textbf{fuerza en un campo magnético con gradiente}, en la cual se removía la bola y se instalaba una torre de plástico con un resorte y un imán en el interior en la UP, esta vez con el suministro de aire apagado. La torre se veía de la siguiente manera:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.3]{torre.png}
+    \caption{Torre de plástico con resorte e imán en su interior. Tomado de \cite{guia}}
+    \label{fig:grafica4}
+\end{figure}
+
+Con el gradiente de $B$ apagado y aplicando una corriente de 2A, se observaba el comportamiento del imán al cambiar la dirección del $B$. Después, con el gradiente de campo encendido y el imán ajustado, se iba variando la corriente desde 0A hasta 4A, en pasos de 0.5A, donde para cada uno de estos casos se medía la longitud de la varilla exterior al tubo, la cual termina siendo la elongación del resorte al interior. En cada caso era necesario reajustar el sistema y colocarlo en la posición inicial. Para saber la constante del resorte, se usó el principio de equilibrio estático (peso igual a fuerza de resorte) con una masa al final del resorte.
+
+%-------RESULTADOS------------
+\section{Resultados y Análisis}
+
+\subsection{Equilibrio estático}
+
+Los valores dimensionales obtenidos son: radio de la bola $R= 2.69 \pm 0.05 cm$, masa de la pesa $m= 4.5 \pm 0.1 g$, masa de la varilla $M= 1.2 \pm 0.1 g$, longitud de la varilla $L= 9.94 \pm 0.05 cm$. Con el campo vertical, el gradiente apagado y la unidad principal nivelada, se tomaron datos de 7 valores distintos de r. Para cada uno, se comienza a variar la corriente hasta hallar equilibrio en el sistema (cuando la varilla apunta 90º con respecto a la vertical). Se registra I y se calcula el campo utilizando la ecuación \ref{eq:campo}. Dichos valores se consignan en la siguiente tabla:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $r (\pm 0.1) cm$ & $I (\pm 0.1) A$ & $B (\pm 0.16) mT$ \\ \hline
+         7.91 & 3.0 & 4.08 \\ \hline
+         6.90 & 2.7 & 3.67 \\ \hline
+         5.90 & 2.5 & 3.4 \\ \hline
+         9.33 & 3.3 & 4.48 \\ \hline
+         5.30 & 2.3 & 3.13 \\ \hline
+         4.72 & 2.1 & 2.85 \\ \hline
+         6.49 & 2.6 & 3.53 \\ \hline
+         
+    \end{tabular}
+    \caption{Tabla de resultados obtenidos en la actividad 1.}
+    \label{tab: tabla1}
+\end{table}
+
+Vale la pena decir que debido a que la unidad de control vibra cuando se prende el suministro de aire, la varilla tiende a soltarse de la bola, afectando los datos de r. Se evidencia además que no hay un equilibrio absoluto del sistema por la influencia del campo magnético terrestre.Para el análisis de los datos, se recurre a la relación teórica dada por la ecuación \ref{eq:torques}. Esta indica que al graficar B vs rmg, $\mu$ será la pendiente experimental de la regresión lineal, y el intercepto con el eje vertical será -dMg. El valor que se debería obtener para dicho intercepto y la gráfica son entonces:
+
+\begin{equation}
+    -dMg=(L/2)Mg=-0.5845\times10^{-3}Nm.
+    \label{eq:intercepto1}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{eq_estatico.png}
+    \caption{Gráfica experimental de la relación B vs rmg con valores experimentales de la pendiente y el intercepto.}
+    \label{fig:grafica1}
+\end{figure}
+
+Se puede observar en la gráfica el comportamiento lineal esperado, pues la hipótesis era una relación directa entre ambas variables graficadas. En adición, se encuentra un error del 10.43\% en el intercepto con respecto al valor de la ecuación \ref{eq:intercepto1}, lo cual puede ser explicado por efectos de la vibración de la unidad de control. Por su parte, el valor experimental del momento magnético en este experimento, resultó ser la pendiente:
+
+\begin{equation*}
+    \mu=\textbf{0.417 Nm/T}.
+\end{equation*}
+
+
+\subsection{Oscilación armónica}
+
+Para este experimento, tenemos un dato dimensional más, que es la masa de la bola $m = 142.2 \pm 0.1 g$. Con el campo magnético encendido, el gradiente apagado y un desplazamiento angular pequeño de la bola con respecto a la vertical, se dejó oscilar esta para 10 valores de corriente distintos, y se registró el correspondiente tiempo en realizar 20 oscilaciones. Con ello, se calculó el campo magnético y el periodo de oscilación de cada una, de nuevo haciendo uso de la ecuación \ref{eq:campo}. Los resultados se hallan en la siguiente tabla:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $I (\pm 0.1) A$ & $B (mT)$ & $t(\pm 0.01 s)$ & $T(\pm 0.01 s)$\\ \hline
+         1.2 & 1.632 $\pm$ 0.148 & 29.32 & 1.46 \\ \hline
+         1.5 & 2.040 $\pm$ 0.151 & 27.24 & 1.36 \\ \hline
+         1.7 & 2.312 $\pm$ 0.153 & 24.44 & 1.24 \\ \hline
+         2.0 & 2.720 $\pm$ 0.156 & 22.79 & 1.14 \\ \hline
+         2.4 & 3.264 $\pm$ 0.160 & 21.29 & 1.06 \\ \hline
+         2.6 & 3.536 $\pm$ 0.162 & 20.71 & 1.03 \\ \hline
+         2.8 & 3.808 $\pm$ 0.164 & 20.39 & 1.02\\ \hline
+         3.0 & 4.080 $\pm$ 0.166 & 19.47 & 0.97 \\ \hline
+         3.2 & 4.352 $\pm$ 0.168 & 18.82 & 0.94 \\ \hline
+         3.6 & 4.896 $\pm$ 0.172 & 17.84 & 0.89 \\ \hline
+    \end{tabular}
+    \caption{Tabla de resultados obtenidos en la actividad 2.}
+    \label{tab: tabla2}
+\end{table}
+
+Con respecto a estos resultados, vale la pena decir que, al ser medido el tiempo de 20 oscilaciones con un cronómetro manual, es posible que exista un factor extra que afecte las mediciones dado a los reflejos al medir y la imprecisión en el establecimiento del punto de partida desde donde se comienza a medir.\\
+Con estos resultados, es posible encontrar la relación entre el periodo al cuadrado y el campo magnético, tal que se pueda satisfacer la relación de la ecuación \ref{eq:armonico}. Teóricamente, la relación entre $T^2$ y $B$ debe ser inversa, por lo cual tiene sentido graficar $T^2$ versus $\frac{1}{B}$: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{mov_armonico.png}
+    \caption{Gráfica experimental de la relación $1/B$ vs $T^2$ con valores experimentales de la pendiente y el intercepto.}
+    \label{fig:grafica2}
+\end{figure}
+
+Como se puede ver en la gráfica, los datos en efecto tienen una correlación lineal. Sin embargo, la recta parece haber experimentado un corrimiento hacia arriba en el plano (su intercepto no es nulo como se esperaba). Esto puede que haya ocurrido por los comentarios dichos anteriormente sobre el posible aumento en el tiempo tomado. Para hallar el momento magnético en este caso, basta con recordar que la pendiente es $p=\frac{8\pi^2}{5}\frac{mR^2}{\mu}$. Teniendo ya el valor de p a partir de la regresión lineal, basta con resolver para $\mu$:
+
+\begin{equation*}
+    \mu=\frac{8\pi^2}{5}\frac{mR^2}{p}=\textbf{0.488 Nm/T}.
+\end{equation*}
+
+Con respecto al valor del momento magnético en el primer experimento, existe una diferencia de 17.27\%, lo cual es aceptable teniendo en cuenta el orden de magnitud y su consiguiente sensibilidad a las cifras significativas, y el mismo margen de error en los datos tomados.
+
+\subsection{Precesión}
+
+En este experimento, se usó una frecuencia de estroboscopio igual para todas las mediciones: $f_e=5.5 Hz$. Dicha frecuencia corresponde a aquella cuando el punto blanco en la manija negra de la bola parece estar estático, dictando así la frecuencia de rotación inducida a mano. Una vez lograda esta sincronización, se tomaron datos para 7 corrientes, con sus respectivos periodos de precesión y su campo magnético. Los datos están en la siguiente tabla:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $I (\pm 0.1) A$ & $T (\pm 0.01) s$ & $B (\pm 0.136) mT$ \\ \hline
+         1.0 & 13.57 & 1.36 \\ \hline
+         1.5 & 10.31 & 2.04 \\ \hline
+         2.0 & 7.60 & 2.72 \\ \hline
+         2.5 & 6.03 & 3.40 \\ \hline
+         3.0 & 4.80 & 4.08 \\ \hline
+         3.5 & 4.23 & 4.76 \\ \hline
+         4.0 & 3.95 & 5.44 \\ \hline
+    \end{tabular}
+    \caption{Tabla de resultados obtenidos en la actividad 3.}
+    \label{tab: tabla3}
+\end{table}
+
+En cuanto a la toma de estos datos, vale la pena resaltar la cantidad de factores que afectaron los datos. Entre ellos, el error humano es enorme, pues el periodo de precesión no es de gran precisión al no tener claro el momento exacto en que se completa el ciclo de rotación. Además de ello, al lograr la sincronización entre el estroboscopio y la rotación de la bola, dicha igualdad en frecuencia no suele durar, dado que la bola experimenta fricción con el giro, amortiguando su movimiento rotacional. Esto último tiene un efecto directo en los datos de la frecuencia de Larmor. Además de ello, se tiene el factor de proporcionarle momento angular a la bola girándola, lo cual puede llegar a no ser perfecto dado que hay que girarla a mano. Esto podría aumentar la magnitud de la precesión.\\
+De manera cuantitativa, es posible analizar los datos por medio de la relación de la ecuación \ref{eq:larmor}, realizando una gráfica del campo magnético y el inverso del periodo que resulta ser el valor de $\Omega$. La pendiente debería ser, entonces, $\mu/Ls$, donde $Ls$ es como en la ecuación \ref{eq:momangular}. De manera analítica, el valor del momento angular debería de ser $Ls=1.422\times 10^{-3} kgm^2/s$, teniendo en cuenta los valores previamente tomados de radio, masa y frecuencia de la esfera. La gráfica que relaciona la frecuencia de Larmor con el campo magnético es la siguiente:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{precesion.png}
+    \caption{Gráfica experimental de la relación $B$ vs $\Omega$ con valores experimentales de la pendiente y el intercepto.}
+    \label{fig:grafica3}
+\end{figure}
+
+En la gráfica se observa una correlación lineal de nuevo. Existe un intercepto no nulo que no concuerda con la teoría, sin embargo el valor es pequeño. Este corrimiento es el reflejo de todos los factores comentados que pudieron influenciar los datos de las frecuencias. En cuanto a la pendiente, su valor da la razón entre el momento magnético y el momento angular. Utilizando el momento angular hallado previamente y resolviendo para $\mu$:
+
+\begin{equation*}
+    \mu = p \dot L_s = \textbf{0.665 Nm/T}.
+\end{equation*}
+
+Este valor de momento magnético tiene una diferencia de 59.56\% con respecto al primer experimento, y otra de 36.07\% con respecto al segundo. Dado que los dos anteriores tienen valores más cercanos entre ellos, se puede inferir que este procedimiento no es el más preciso para hallar el momento magnético del imán.\\
+Ahora, de manera cualitativa, nos proponen dos casos: uno donde se le cambia la dirección al campo magnético y otra donde se le pone la varilla del experimento 1 a la bola. En el primer caso, se pudo observar que cambia la dirección de precesión, es decir, que si antes precesaba con las agujas del reloj, después de cambiar la dirección, comenzó a precesar contra las agujas. Esto es porque al cambiar la dirección del campo, el torque magnético cambia de sentido gracias a  la ecuación \ref{eq:torquemag}. En el segundo caso, antes de ponerle el campo, ya presenta precesión con la varilla, y una vez encendido el campo, la precesión cambia de orientación. Esto se explica por el torque gravitacional existente que busca posteriormente un equilibrio con el magnético.
+
+\subsection{Resonancia magnética}
+
+Antes de poner la base de madera en la unidad principal, se hizo precesar la bola de resina como en el experimento anterior, y se evidenció que esta siempre precesa al mismo ángulo con respecto a la vertical, en presencia del campo magnético generado por las bobinas que va en esta misma dirección. Al acoplar la base de madera, se generó un campo magnético extra (gracias a los imanes en dicha base), que es perpendicular al de las bobinas, por lo cual la bola tiende a precesar alrededor del eje que provoca el campo magnético resultante entre estos dos, en vez de hacerlo alrededor del eje vertical.\\
+Si se hace rotar la base de madera a la frecuencia de precesión de Larmor, se debería de evidenciar que el ángulo con el que precesa respecto a la vertical cambia de forma notoria, lo cual dependerá de la frecuencia a la cual se rote dicha base. Sin embargo, vale la pena decir que en el momento de realizar el experimento, no fue posible observar dicho efecto como se acaba de describir, pues fue difícil de ejecutar la rotación de la base de madera. A pesar de esto, es posible inferir del análisis anterior que cuando se rota la base de madera en dirección contraria a la precesión original, se espera que haya un comportamiento similar, pero en dirección opuesta.
+
+\subsection{Fuerza en un campo con gradiente}
+
+En el nuevo montaje establecido, lo primero que se hizo fue prender la corriente hasta llegar a 2A con el gradiente de campo apagado. Al cambiar la dirección del campo, se notó que el imán permanente que cuelga al final del resorte dio un giro de 180º para alinearse con el nuevo campo magnético.\\
+Después de ello, se aseguró el imán para que no pudiera girar, y posteriormente se marcó la posición inicial del imán y se procedió a activar el gradiente de campo. El resultado general al prenderlo fue que el imán experimentó una fuerza hacia abajo, la cual es explicada por la relación \ref{eq:fuerza}, donde si un campo cambia, experimenta una fuerza magnética. El diagrama de fuerzas en presencia de este gradiente es el siguiente:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{diagrama_fuerzas.png}
+    \caption{Diagrama de fuerzas del imán en presencia de un gradiente de B.}
+    \label{fig:fuerzas}
+\end{figure}
+
+Los datos tomados con el gradiente encendido fueron la corriente (esta se varió desde 0.5 hasta 4A) y la longitud de la varilla que quedaba por fuera del tubo de plástico (en la primera medición, tomamos la longitud inicial $l_0 = 12 \pm 0.05 cm$). Con estos datos, se calcularon el gradiente de campo (con la ecuación \ref{eq:gradiente}) y la diferencia en altura de la varilla con respecto a $l_0$: este valor es, en otras palabras, el cambio en la elongación del resorte con respecto a la elongación causada únicamente por el peso del imán). Todos estos datos se consignan en la siguiente tabla:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $I (\pm 0.1) A$ & $\frac{dB}{dz} (\pm 0.17 \times 10^{-2} T/m)$ & $l(\pm 0.1 cm)$ & $z(\pm 0.2 cm)$\\ \hline
+         0.5 & 0.84 & 12.6 & 0.6\\ \hline
+         1.0 & 1.69 & 13.0 & 1.0\\ \hline
+         1.5 & 2.53 & 13.5 & 1.5 \\ \hline
+         2.0 & 3.38 & 14.0 & 2.0\\ \hline
+         2.5 & 4.22 & 14.7 & 2.7 \\ \hline
+         3.0 & 5.07 & 15.4 & 3.4\\ \hline
+         3.5 & 5.90 & 16.1 & 4.1 \\ \hline
+         4.0 & 6.76 & 16.7 & 4.7\\ \hline
+    \end{tabular}
+    \caption{Tabla de resultados obtenidos en la actividad 5.}
+    \label{tab: tabla5}
+\end{table}
+
+Para poder realizar un correcto análisis, fue necesario hacer una medición para la constante del resorte. Esto se hizo mediante equilibrio estático con una masa de $7.6 \pm 0.1$ g colocada al final del resorte. Si la elongación medida con respecto a la longitud natural del resorte fue de $4.1 \pm 0.1$ cm, la constante del resorte es:
+
+\begin{equation}
+    k = \frac{mg}{\Delta z}=\frac{(7.6\times10^{-3}kg)(9.8m/s^2)}{4.1\times10^{-2}m}=1.816 \pm 0.068 Nm.
+    \label{eq:k}
+\end{equation}
+
+Con esto en mente, es ahora posible graficar la relación entre la elongación $z$ y el gradiente de $B$, recordando que en equilibrio, se tiene la ecuación \ref{eq:equilibrio}. La gráfica es la siguiente:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.48\textwidth]{gradiente.png}
+    \caption{Gráfica experimental de la relación $\nabla B$ vs $z$ con valores experimentales de la pendiente y el intercepto.}
+    \label{fig:grafica5}
+\end{figure}
+
+Como se puede ver, la relación es, también, lineal, pero con un intercepto no nulo que no se esperaba en la teoría, el cual podría deberse a que en la ecuación de equilibrio no se tiene en cuenta el peso del imán que, aunque no es muy pesado, fue suficiente para generar un corrimiento en la gráfica. Además, es posible sacar el momento magnético a partir de la pendiente, pues según la ecuación \ref{eq:equilibrio}, $p = \mu /k$. El valor de $\mu$ es entonces:
+
+\begin{equation*}
+    \mu = kp = \textbf{0.393 Nm/T}.
+\end{equation*}
+
+Note que este valor es más parecido al de los experimentos 1 y 2, pero no al del experimento 3, sus errores respectivos son de 5.75\%, 19.63\% y 40.98\%. Los posibles factores que afectaron esta medición fueron la falta de un equilibrio absoluto del resorte (pues había que quitarlo del sistema y ponerlo de nuevo con cada medición entonces nunca se quedaba quieto), y errores instrumentales (no nos fue posible tener un calibrador, por lo cual las mediciones de distancia se hicieron con una regla ordinaria).
+
+Para finalizar esta sección, vale la pena mencionar que las variables de campos eléctricos y magnéticos externos afectan los datos en la medida de que causan pequeñas oscilaciones en la bola cuando no deberían estar. Además, la temperatura es otro factor que afecta los datos, pues juega un rol en la susceptibilidad magnética de los imanes implementados, y los momentos magnéticos nucleares también tienen un efecto en el momento angular del imán interno. En cuanto a la temperatura, es posible controlarla para que la susceptibilidad sea óptima, o incluirla explícitamente en las ecuaciones también es un buen método para tener datos más precisos; y en cuanto a los momentos magnéticos nucleares, estos no serán problema siempre que se trabajen con medidas de órdenes mayores para que el momento nuclear sea despreciable ante el momento del imán.
+
+\section{Conclusiones}
+Se logró medir el momento magnético del sistema utilizando 4 métodos cuantitativos, para los cuales su valor promedio fue $\mu = 0.5158 Nm/T$, aunque el valor obtenido en el método de precesión no estuvo tan cercano a los demás datos por su cantidad de errores experimentales. Entonces, si no se tiene en cuenta el valor de este experimento, se tiene un valor medio para el momento $\mu = 0,433 Nm/T$. \\
+En adición, se pudo observar y analizar el fenómeno de precesión del momento angular causado por un campo magnético vertical generado por un arreglo de bobinas. Dicho movimiento de precesión varía si se le agrega otro campo magnético, en cuyo caso puede cambiar de orientación o modificar su ángulo de precesión debido a un cambio en el eje.
+Se evidenció también la existencia de una fuerza magnética generada por un campo magnético cambiante mediante su efecto en un imán sujeto a un resorte. \\
+Los datos cuantitativos concuerdan con lo esperado en cuanto a su comportamiento lineal, evidenciando que las proporciones teóricas son acertadas, y se pudo comprobar gracias a la precisión de los datos que el arreglo de bobinas de Helmholtz generan un campo por unidad de corriente en el centro que puede en efecto ser tomado como constante.\\
+Finalmente, los errores experimentales fueron debidos a oscilaciones no intencionales gracias al campo magnético terrestre, el incorrecto movimiento rotacional inducido a la bola y vibración de la unidad principal, además del error humano en la toma de datos con cronómetro dada la imprecisión en los tiempos inicial y final, y la fricción de la bola en el giro que disminuye su frecuencia de rotación. 
+
+\begin{thebibliography}{}
+
+\bibitem{torque} Nave, R (2017). Magnetic Dipole Moment. HyperPhysics. Recuperado el 6 de Septiembre de 2017 de http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magmom.html\\
+
+\bibitem{bobina} Nave, R (2017). Bobinas Helmholtz. HyperPhysics. Recuperado el 6 de Septiembre de 2017 de http://hyperphysics.phy-astr.gsu.edu/hbasees/magnetic/helmholtz.html\\
+
+\bibitem{prece} \textit{Magnetic Torque and Magnetic Force} (2002). New York University. Department of Physics. Recuperado el 6 de Septiembre de 2017 de http://physics.nyu.edu/~physlab/Classical\%20and\%20Qu-
+antum\%20Wave\%20Lab/MagTorque.pdf\\
+
+\bibitem{rmn} \textit{Magnetic torque}. (2017). University of Colorado. Recuperado el 6 de Septiembre del 2017 de http://www.colorado.edu/physics/phys2150/phys2150\_fa16/
+11\%20-\%20Magnetic\%20Torque\%20Fa16.pdf\\
+
+\bibitem{teach} TeachSpin (2017). Magnetic torque, instruments, experiments and Specifications. Recuperado el 6 de Septiembre del 2017 de http://www.teachspin.com/magnetic-torque.html\\
+
+\bibitem{guia} Departamento de Física (2017). \textit{Torque Magnético}. Laboratorio Intermedio. Universidad de los Andes, Bogotá D.C.
+
+\end{thebibliography}
+
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******
+
